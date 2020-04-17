@@ -30,8 +30,8 @@ add_executable(${PROJECT_NAME} ${SOURCE_LIST})
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(${PROJECT_NAME} benchmark)
-target_link_libraries(${PROJECT_NAME} cnpy)
+target_link_libraries(${PROJECT_NAME} ${LIBBENCHMARK})
+target_link_libraries(${PROJECT_NAME}  ${LIBCNPY})
 target_link_libraries(${PROJECT_NAME} pthread)
 
 include_directories(${CMAKE_SOURCE_DIR}/libs/openpose)

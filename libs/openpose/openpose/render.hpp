@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <boost/format.hpp>
 #include <unsupported/Eigen/CXX11/Tensor>
 #include <opencv2/opencv.hpp>
+#include <list>
 
 namespace openpose
 {
