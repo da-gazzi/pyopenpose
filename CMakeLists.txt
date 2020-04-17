@@ -45,9 +45,17 @@ if(PYTHONINTERP_FOUND)
 	set(PYMODULE_ROOT "${PYTHON_USER_SITE_PACKAGE}" CACHE PATH "PYMODULE_ROOT")
 endif()
 
-set(PYBIND11_CMAKE_DIR "/usr/local/share/cmake/pybind11" CACHE PATH "pybind11 CMake directory")
+
+
+#Assume we are using conda
+set(PYBIND11_CMAKE_DIR "$ENV{CONDA_PREFIX}/share/cmake/pybind11" CACHE PATH "pybind11 CMake directory")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PYBIND11_CMAKE_DIR})
 include(pybind11Tools)
+
+# if we don't have root, includes will be here - make sure to set CMAKE_PREFIX_PATH
+include_directories(${CMAKE_PREFIX_PATH}/include)
+find_library(LIBCNPY cnpy PATH_SUFFIXES lib lib64)
+find_library(LIBBENCHMARK benchmark PATH_SUFFIXES lib lib64)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/libs)
 add_subdirectory(${CMAKE_SOURCE_DIR}/projects)

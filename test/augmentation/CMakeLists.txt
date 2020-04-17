@@ -36,7 +36,7 @@ endif()
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-target_link_libraries(${PROJECT_NAME} cnpy)
+target_link_libraries(${PROJECT_NAME}  ${LIBCNPY})
 
 option(DEBUG_SHOW "show debug images" YES)
 if(DEBUG_SHOW)

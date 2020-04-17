@@ -32,5 +32,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PYM
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
+
 include_directories(${CMAKE_SOURCE_DIR}/libs/openpose)
 target_link_libraries(${PROJECT_NAME} openpose)
