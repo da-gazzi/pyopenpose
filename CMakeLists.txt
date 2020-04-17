@@ -45,7 +45,7 @@ if(PYTHONINTERP_FOUND)
 	set(PYMODULE_ROOT "${PYTHON_USER_SITE_PACKAGE}" CACHE PATH "PYMODULE_ROOT")
 endif()
 
-set(PYBIND11_CMAKE_DIR "/usr/local/share/cmake/pybind11" CACHE PATH "pybind11 CMake directory")
+set(PYBIND11_CMAKE_DIR ${CONDA_PREFIX}/share/cmake/pybind11 CACHE PATH "pybind11 CMake directory")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PYBIND11_CMAKE_DIR})
 include(pybind11Tools)
 
